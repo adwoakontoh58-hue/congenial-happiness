@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Makes the website work well on phones -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Website title -->
+    <title>Our Family Works</title>
+
+    <style>
+        /* Removes default spacing */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* General body design */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: #f4f4f4;
+            color: #222;
+        }
+
+        /* Navigation bar */
+        nav {
+            background: #12355b;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Navigation list */
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Navigation links */
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 14px;
+            display: block;
+            font-weight: bold;
+        }
+
+        /* Navigation hover effect */
+        nav a:hover {
+            background: #f4a261;
+            border-radius: 5px;
+        }
+
+        /* Page sections */
+        .page {
+            min-height: 100vh;
+            padding: 70px 8%;
+        }
+
+        /* Home page */
+        #home {
+            background: linear-gradient(rgba(18,53,91,.8), rgba(18,53,91,.8)),
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500'%3E%3Crect width='800' height='500' fill='%23f4a261'/%3E%3Ccircle cx='200' cy='180' r='120' fill='%232a9d8f'/%3E%3Ccircle cx='600' cy='300' r='160' fill='%23e9c46a'/%3E%3C/svg%3E");
+            background-size: cover;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Main heading */
+        h1 {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        /* Section headings */
+        h2 {
+            text-align: center;
+            color: #12355b;
+            margin-bottom: 30px;
+            font-size: 35px;
+        }
+
+        /* General paragraph */
+        p {
+            margin-bottom: 15px;
+        }
+
+        /* Button */
+        .btn {
+            display: inline-block;
+            background: #f4a261;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        /* Button hover */
+        .btn:hover {
+            background: #e76f51;
+        }
+
+        /* Cards container */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        /* Individual card */
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,.15);
+            text-align: center;
+        }
+
+        /* Card image */
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        /* About section */
+        #about {
+            background: white;
+        }
+
+        /* Services section */
+        #services {
+            background: #eef6f7;
+        }
+
+        /* Profiles */
+        #relative1,
+        #relative2,
+        #relative3 {
+            background: white;
+        }
+
+        /* Gallery */
+        #gallery {
+            background: #eef6f7;
+        }
+
+        /* Gallery grid */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        /* Gallery images */
+        .gallery img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* Projects */
+        #projects {
+            background: white;
+        }
+
+        /* Testimonials */
+        #testimonials {
+            background: #eef6f7;
+        }
+
+        /* Contact */
+        #contact {
+            background: white;
+        }
+
+        /* Contact form */
+        form {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        /* Form inputs */
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Textarea */
+        textarea {
+            height: 150px;
+        }
+
+        /* Footer */
+        footer {
+            background: #12355b;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        /* Mobile design */
+        @media (max-width: 600px) {
+
+            h1 {
+                font-size: 35px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .page {
+                padding: 50px 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#relative1">Relative 1</a></li>
+            <li><a href="#relative2">Relative 2</a></li>
+            <li><a href="#relative3">Relative 3</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- ================= PAGE 1: HOME ================= -->
+
+    <section id="home" class="page">
+
+        <h1>Our Family Works</h1>
+
+        <p>
+            Welcome to our family business website.
+        </p>
+
+        <p>
+            Discover the skills, services and amazing work
+            provided by members of our family.
+        </p>
+
+        <a href="#services" class="btn">
+            Explore Our Services
+        </a>
+
+    </section>
+
+
+    <!-- ================= PAGE 2: ABOUT ================= -->
+
+    <section id="about" class="page">
+
+        <h2>About Our Family</h2>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>Who We Are</h3>
+
+                <p>
+                    We are a hardworking family with different
+                    skills and talents. Each member contributes
+                    their knowledge and experience to provide
+                    useful services to our customers.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Our Mission</h3>
+
+                <p>
+                    Our mission is to provide quality work,
+                    excellent customer service and reliable
+                    solutions to our clients.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Our Values</h3>
+
+                <p>
+                    We believe in honesty, hard work,
+                    responsibility, teamwork and respect.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PAGE 3: SERVICES ================= -->
+
+    <section id="services" class="page">
+
+        <h2>Our Services</h2>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>Building & Construction</h3>
+
+                <p>
+                    Building, renovation and construction
+                    services for homes and other projects.
+                </p>
+
+                <a href="#relative1" class="btn">
+                    Learn More
+                </a>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Fashion & Design</h3>
+
+                <p>
+                    Clothing design, sewing and fashion
+                    services for different occasions.
+                </p>
+
+                <a href="#relative2" class="btn">
+                    Learn More
+                </a>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Technology</h3>
+
+                <p>
+                    Computer services, website design and
+                    other technology-related services.
+                </p>
+
+                <a href="#relative3" class="btn">
+                    Learn More
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PAGE 4: RELATIVE 1 ================= -->
+
+    <section id="relative1" class="page">
+
+        <h2>Relative 1 - Construction Work</h2>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <img
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect width='600' height='400' fill='%23d9a066'/%3E%3Crect x='120' y='150' width='360' height='200' fill='%23eeeeee'/%3E%3Cpolygon points='100,150 300,50 500,150' fill='%238b5e3c'/%3E%3C/svg%3E"
+                alt="Construction work">
+
+                <h3>Building Specialist</h3>
+
+                <p>
+                    Specializes in building and renovation.
+                    Provides quality construction work and
+                    helps clients complete their projects.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PAGE 5: RELATIVE 2 ================= -->
+
+    <section id="relative2" class="page">
+
+        <h2>Relative 2 - Fashion Work</h2>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <img
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect width='600' height='400' fill='%23e9c46a'/%3E%3Cpath d='M200 80 L300 160 L400 80 L470 350 L130 350 Z' fill='%232a9d8f'/%3E%3C/svg%3E"
+                alt="Fashion design">
+
+                <h3>Fashion Designer</h3>
+
+                <p>
+                    Creates beautiful clothes and provides
+                    sewing and fashion design services.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PAGE 6: RELATIVE 3 ================= -->
+
+    <section id="relative3" class="page">
+
+        <h2>Relative 3 - Technology Work</h2>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <img
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect width='600' height='400' fill='%2312355b'/%3E%3Crect x='100' y='70' width='400' height='250' rx='15' fill='%23eeeeee'/%3E%3Crect x='140' y='105' width='320' height='170' fill='%232a9d8f'/%3E%3C/svg%3E"
+                alt="Technology work">
+
+                <h3>Technology Specialist</h3>
+
+                <p>
+                    Provides computer services, website
+                    development and digital solutions.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PAGE 7: GALLERY ================= -->
+
+    <section id="gallery" class="page">
+
+        <h2>Our Gallery</h2>
+
+        <div class="gallery">
+
+            <img
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect width='600' height='400' fill='%23f4a261'/%3E%3Ccircle cx='300' cy='200' r='100' fill='%232a9d8f'/%3E%3C/svg%3E"
+            alt="Family work">
+
+            <img
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect width='600' height='400' fill='%232a9d8f'/%3E%3Crect x='150' y='100' width='300' height='200' fill='%23e9c46a'/%3E%3C/svg%3E"
+            alt="Project">
+
+            <img
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect width='600' height='400' fill='%23e9c46a'/%3E%3Cpolygon points='300,50 500,350 100,350' fill='%23e76f51'/%3E%3C/svg%3E"
+            alt="Creative work">
+
+            <img
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect width='600' height='400' fill='%2312355b'/%3E%3Ccircle cx='300' cy='200' r='130' fill='%23f4a261'/%3E%3C/svg%3E"
+            alt="Professional work">
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PAGE 8: PROJECTS ================= -->
+
+    <section id="projects" class="page">
+
+        <h2>Our Projects</h2>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>Project One</h3>
+
+                <p>
+                    A completed family project demonstrating
+                    creativity, teamwork and dedication.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Project Two</h3>
+
+                <p>
+                    Another successful project completed
+                    for a satisfied customer.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Project Three</h3>
+
+                <p>
+                    A project that demonstrates our skills
+                    and commitment to quality.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PAGE 9: TESTIMONIALS ================= -->
+
+    <section id="testimonials" class="page">
+
+        <h2>Customer Testimonials</h2>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>Customer 1</h3>
+
+                <p>
+                    "The work was completed professionally
+                    and I was very satisfied."
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Customer 2</h3>
+
+                <p>
+                    "Excellent service and good communication
+                    throughout the project."
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Customer 3</h3>
+
+                <p>
+                    "I would recommend their services to
+                    anyone looking for quality work."
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PAGE 10: CONTACT ================= -->
+
+    <section id="contact" class="page">
+
+        <h2>Contact Us</h2>
+
+        <p style="text-align:center;">
+            Get in touch with us for more information about
+            our services.
+        </p>
+
+        <form>
+
+            <!-- Customer name -->
+            <input
+            type="text"
+            placeholder="Your Name"
+            required>
+
+            <!-- Customer email -->
+            <input
+            type="email"
+            placeholder="Your Email"
+            required>
+
+            <!-- Customer phone -->
+            <input
+            type="tel"
+            placeholder="Your Phone Number">
+
+            <!-- Customer message -->
+            <textarea
+            placeholder="Your Message"
+            required></textarea>
+
+            <!-- Submit button -->
+            <button
+            type="submit"
+            class="btn">
+                Send Message
+            </button>
+
+        </form>
+
+        <br>
+
+        <div style="text-align:center;">
+
+            <p><strong>Phone:</strong> +233 XX XXX XXXX</p>
+
+            <p><strong>Email:</strong> familywork@example.com</p>
+
+            <p><strong>Location:</strong> Ghana</p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 Our Family Works. All Rights Reserved.
+        </p>
+
+        <p>
+            Designed by Our Family
+        </p>
+
+    </footer>
+
+</body>
+</html>
